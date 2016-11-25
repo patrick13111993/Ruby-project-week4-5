@@ -1,0 +1,13 @@
+body {
+  color:white;
+ font-family: Arial;
+    background-image: url("http://www.win10themes.com/wp-content/uploads/2016/06/Wallpapers-Pokemon.jpg");
+
+}
+a:link {
+  color: white;
+}
+
+a:visited {
+  color: cyan;
+}
