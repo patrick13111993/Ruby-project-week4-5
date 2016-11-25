@@ -1,0 +1,10 @@
+<h1>Pokemon</h1>
+<p><a href="/pokemon/new">Enter Pokemon's details</a></p>
+<% for pokemon in @pokemon %>
+<p>Name: <%= pokemon.name %></p>
+<p>Date: <%= pokemon.date %> </p>
+<p>Trainer: <%= nil || pokemon.trainer.name %> </p>
+<p>Breed: <%= pokemon.breed %> </p>
+<a href="/pokemon/<%= pokemon.id() %>">View Pokemon</a>
+<hr/>
+<% end %>
