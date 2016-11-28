@@ -1,5 +1,5 @@
 body {
-  color:white;
+  color:#ff0060;
  font-family: Arial;
     background-image: url("http://www.win10themes.com/wp-content/uploads/2016/06/Wallpapers-Pokemon.jpg");
 
@@ -9,5 +9,19 @@ a:link {
 }
 
 a:visited {
-  color: cyan;
+  color: pink;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav ul li {
+  padding: 15px;
+  display: inline-block;
+  background-color: red;
+}
+
+nav a {
+  text-decoration: none;
 }

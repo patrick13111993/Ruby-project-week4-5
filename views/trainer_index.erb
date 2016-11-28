@@ -1,0 +1,6 @@
+<h1>Our Trainers</h1>
+<% for trainer in @trainers %>
+<p></p>
+<a href="/trainer/<%= trainer.id() %>"><%= trainer.name %></a>
+<hr/>
+<% end %>

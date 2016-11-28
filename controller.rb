@@ -27,3 +27,22 @@ post '/pokemon' do
   pokemon.save()
   redirect to("/pokemon")
 end
+
+get '/trainer/new' do
+  erb(:new_trainer)
+end
+
+get '/trainer' do
+  @trainers = Trainer.all()
+  erb(:trainer_index)
+end
+
+post '/trainer' do
+  trainer = Trainer.new(params)
+  trainer.save()
+  redirect to("/trainer")
+end
+
+get '/adopt' do
+  
+end
