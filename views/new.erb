@@ -11,22 +11,13 @@
       <input type="text" name="breed"/>
     </label>
   </p>
-  <p>
-    <label>
-      Trainer:
-      <select name="house_trainerid">
-
-       <% for trainer in @trainers %>
-        <option value="<%=trainer.id%>"><%=trainer.name%></option>
-      <% end %>
-      </select>
-    </label>
-  </p>  
-  <p>
-    <label>
+  <p><label>
       Date:
       <input type="date" name="date_arrived"/>
     </label>
-  </p>
+    </p>
+  </p>  
+  <p>
+    <label>
   <input type="submit" value="Enrol"/>
 </form>

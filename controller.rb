@@ -14,9 +14,13 @@ get '/pokemon' do
 end
 
 get '/pokemon/new' do
-  @trainers = Trainer.all()
   erb(:new)
 end
+
+get '/pokemon/:id' do
+    @pokemon = Pokemon.find(params[:id])
+    erb(:show)
+  end
 
 post '/pokemon' do
   pokemon = Pokemon.new(params)
