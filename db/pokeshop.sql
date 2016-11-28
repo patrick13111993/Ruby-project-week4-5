@@ -1,5 +1,5 @@
 DROP TABLE IF EXISTS pokemon;
-DROP TABLE IF EXISTS owners;
+DROP TABLE IF EXISTS trainers;
 
 
 CREATE TABLE trainers (

@@ -6,6 +6,10 @@ trainer1 = Trainer.new(
   "name" => "Ash Ketchum"
 )
 
+trainer2 = Trainer.new(
+  "name" => "Pokemon Shelter"
+  )
+
   trainer1.save()
 
 pokemon1 = Pokemon.new(

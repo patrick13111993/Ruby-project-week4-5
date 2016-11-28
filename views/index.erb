@@ -1,8 +1,8 @@
 <h1>Pokemon</h1>
-<p><a href="/pokemon/new">Enter Pokemon's details</a></p>
+<p><a href="/pokemon/new">Enrol Pokemon</a></p>
 <% for pokemon in @pokemon %>
 <p>Name: <%= pokemon.name %></p>
-<p>Date: <%= pokemon.date %> </p>
+<p>Date arrived: <%= pokemon.date_arrived %> </p>
 <p>Trainer: <%= nil || pokemon.trainer.name %> </p>
 <p>Breed: <%= pokemon.breed %> </p>
 <a href="/pokemon/<%= pokemon.id() %>">View Pokemon</a>

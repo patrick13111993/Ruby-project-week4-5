@@ -10,7 +10,7 @@ class Pokemon
     @name = options['name']
     @breed = options['breed']
     @date_arrived = options['date_arrived']
-    @trainerid = nil || options['trainerid']
+    @trainerid = options['trainerid'] || trainer2.id
   end
 
 

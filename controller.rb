@@ -17,3 +17,9 @@ get '/pokemon/new' do
   @trainers = Trainer.all()
   erb(:new)
 end
+
+post '/pokemon' do
+  pokemon = Pokemon.new(params)
+  pokemon.save()
+  redirect to("/pokemon")
+end
