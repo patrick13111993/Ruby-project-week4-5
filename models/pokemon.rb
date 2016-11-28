@@ -10,14 +10,14 @@ class Pokemon
     @name = options['name']
     @breed = options['breed']
     @date_arrived = options['date_arrived']
-    @trainerid = options['trainerid']
+    @trainerid = nil || options['trainerid']
   end
 
 
   def save()
     sql = "INSERT INTO pokemon (
     name,breed,date_arrived,trainerid ) VALUES 
-    ('#{ @name }','#{ @breed }',#{ @date_arrived },#{ @trainer_id }) 
+    ('#{ @name }','#{ @breed }','#{ @date_arrived }',#{ @trainerid }) 
     RETURNING *"
     pokemon_data = SqlRunner.run(sql)
     @id = pokemon_data.first()['id'].to_i

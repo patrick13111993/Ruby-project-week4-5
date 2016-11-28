@@ -11,7 +11,8 @@ trainer1 = Trainer.new(
 pokemon1 = Pokemon.new(
 "name" => "Jimmy",
 "breed" => "Pikachu",
-"date_arrived" => 2016-11-25
+"date_arrived" => 20161125,
+"trainerid" => trainer1.id
   )
 
 

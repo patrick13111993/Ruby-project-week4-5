@@ -1,0 +1,32 @@
+<h1>Enrol Pokemon</h1>
+
+<form action="/pokemon" method="post">
+  <label>
+    First name:
+    <input type="text" name="name"/>
+  </label>
+  <p>
+    <label>
+      Breed:
+      <input type="text" name="breed"/>
+    </label>
+  </p>
+  <p>
+    <label>
+      Trainer:
+      <select name="house_trainerid">
+
+       <% for trainer in @trainers %>
+        <option value="<%=trainer.id%>"><%=trainer.name%></option>
+      <% end %>
+      </select>
+    </label>
+  </p>  
+  <p>
+    <label>
+      Date:
+      <input type="date" name="date_arrived"/>
+    </label>
+  </p>
+  <input type="submit" value="Enrol"/>
+</form>
