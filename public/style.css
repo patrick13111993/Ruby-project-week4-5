@@ -1,7 +1,9 @@
 body {
-  color:#ff0060;
+  color:#ffffff;
  font-family: Arial;
     background-image: url("http://www.win10themes.com/wp-content/uploads/2016/06/Wallpapers-Pokemon.jpg");
+    font-size:18px;
+    font-weight:bold;
 
 }
 a:link {

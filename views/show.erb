@@ -2,7 +2,7 @@
 <p>Date arrived: <%= @pokemon.date_arrived %> </p>
 <p>Breed: <%= @pokemon.breed %> </p>
 <p>Trainer: <%= @pokemon.trainer.name if @pokemon.trainerid != 'null' %>
-<%= 'No one - up for adoption!' if @pokemon.is_adoptable?%>
-<%= "This pokemon will be up for adoption in #{(30 - @pokemon.time_since_arrival).to_s} days!" if @pokemon.trainerid == 'null' && @pokemon.is_adoptable? == false %> </p>
+<%= 'No one - please adopt me!' if @pokemon.is_adoptable?%>
+<%= "No one - you can adopt me in #{(30 - @pokemon.time_since_arrival).to_s} days!" if @pokemon.trainerid == 'null' && @pokemon.is_adoptable? == false %> </p>
 <p><% if @pokemon.picture != 'null' %><img src="<%=@pokemon.picture%>" alt="Photo" style="width:300px;height:300px;">
 <% end %></p>
