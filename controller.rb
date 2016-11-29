@@ -1,6 +1,7 @@
 require('sinatra')
 require('sinatra/contrib/all')
 require('pry-byebug')
+require('date')
 require_relative('models/pokemon')
 require_relative('models/trainer')
 
@@ -49,10 +50,19 @@ post '/trainer' do
 end
 
 get '/adopt' do
-  @trainers = Trainer.all()
-  @pokemon = Pokemon.all()
-  erb(:adopt)
+    @trainers = Trainer.all()
+    @pokemon = Pokemon.all()
+    adopt = Pokemon.can_adopt?
+    if adopt
+    erb(:adopt)
+  else
+    redirect to ("/sorry")
+  end
 end
+
+get '/sorry' do
+  erb(:sorry)
+end 
 
 post '/adopt' do
   Pokemon.update(params)

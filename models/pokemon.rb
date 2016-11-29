@@ -1,5 +1,6 @@
 require_relative('../db/sql_runner')
 require_relative('trainer')
+require('date')
 
 class Pokemon
 
@@ -39,13 +40,13 @@ class Pokemon
   end
 
   def self.delete_all()
-  sql = "DELETE FROM pokemon;"
-  SqlRunner.run(sql)
+    sql = "DELETE FROM pokemon;"
+    SqlRunner.run(sql)
   end  
 
   def self.delete(id)
-  sql = "DELETE FROM pokemon WHERE id = #{id};"
-  SqlRunner.run(sql)
+    sql = "DELETE FROM pokemon WHERE id = #{id};"
+    SqlRunner.run(sql)
   end
 
   def self.find( id )
@@ -58,7 +59,29 @@ class Pokemon
 
   def self.update(params)
     sql = "UPDATE pokemon SET trainerid = #{params['trainerid']} WHERE id = #{params['pokeid']};"
-      SqlRunner.run(sql)
+    SqlRunner.run(sql)
+  end
+
+  def time_since_arrival
+    t = Date.today
+    date_added = Date.parse(@date_arrived)
+    timespan = (t - date_added).to_i
+    return timespan
+  end
+
+  def is_adoptable?
+    return @trainerid == 'null' && time_since_arrival >= 30
+  end
+
+  def self.can_adopt?
+    adoptable = []
+    pokemons = Pokemon.all()
+    for pokemon in pokemons
+      if pokemon.is_adoptable?
+        adoptable << pokemon
+      end
+    end
+    return adoptable.count != 0
   end
 
 end

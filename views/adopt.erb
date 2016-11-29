@@ -14,11 +14,10 @@
 </p>  
 <p>
   <label>
-    Select the pokemon you wish to adopt:
+    Select the pokemon that you wish to adopt:
     <select name="pokeid">
-
      <% for pokemon in @pokemon %>
-    <% if pokemon.trainerid == 'null'%><option value="<%=pokemon.id%>"><%=pokemon.name%></option>
+    <% if pokemon.is_adoptable? %><option value="<%=pokemon.id%>"><%=pokemon.name%></option>
     <% end %>
     <% end %>
     </select>
