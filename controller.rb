@@ -44,5 +44,7 @@ post '/trainer' do
 end
 
 get '/adopt' do
-  
+  @trainers = Trainer.all()
+  @pokemon = Pokemon.all()
+  erb(:adopt)
 end

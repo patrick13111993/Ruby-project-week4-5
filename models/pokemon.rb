@@ -14,7 +14,6 @@ class Pokemon
     @trainerid = options['trainerid'] || 'null'
   end
 
-
   def save()
     sql = "INSERT INTO pokemon (
     name, breed, date_arrived, trainerid ) VALUES 
@@ -23,15 +22,6 @@ class Pokemon
     pokemon_data = SqlRunner.run(sql)
     @id = pokemon_data.first()['id'].to_i
   end
-
-  # def update()
-  #   sql = "INSERT INTO pokemon (
-  #   name,breed,date_arrived,trainerid ) VALUES 
-  #   ('#{ @name }','#{ @breed }','#{ @date_arrived }',#{ @trainerid }) 
-  #   RETURNING *"
-  #   pokemon_data = SqlRunner.run(sql)
-  #   @id = pokemon_data.first()['id'].to_i
-  # end
 
   def trainer
     sql = "SELECT * FROM trainers
@@ -59,4 +49,6 @@ class Pokemon
 
     return result
   end
+
+  
 end

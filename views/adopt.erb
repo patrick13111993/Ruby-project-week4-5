@@ -1,0 +1,26 @@
+<h1>Adopt Pokemon</h1>
+
+<p>
+  <label>
+    Select your name:
+    <select name="trainerid">
+
+     <% for trainer in @trainers %>
+      <option value="<%=trainer.id%>"><%=trainer.name%></option>
+    <% end %>
+    </select>
+  </label>
+</p>  
+<p>
+<p>
+  <label>
+    Select the pokemon you wish to adopt:
+    <select name="id">
+
+     <% for pokemon in @pokemon %>
+      <option value="<%=pokemon.id%>"><%=pokemon.name%></option>
+    <% end %>
+    </select>
+  </label>
+</p>  
+<p>
