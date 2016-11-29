@@ -18,9 +18,9 @@ get '/pokemon/new' do
 end
 
 get '/pokemon/:id' do
-    @pokemon = Pokemon.find(params[:id])
-    erb(:show)
-  end
+  @pokemon = Pokemon.find(params[:id])
+  erb(:show)
+end
 
 post '/pokemon' do
   pokemon = Pokemon.new(params)
@@ -35,6 +35,11 @@ end
 get '/trainer' do
   @trainers = Trainer.all()
   erb(:trainer_index)
+end
+
+get '/trainer/:id' do
+  @trainer = Trainer.find(params[:id])
+  erb(:show_trainer)
 end
 
 post '/trainer' do

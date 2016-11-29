@@ -1,6 +1,9 @@
 <h1>Pokemon</h1>
 <% for pokemon in @pokemon %>
-<p></p>
-<a href="/pokemon/<%= pokemon.id() %>"><%= pokemon.name %></a>
+<p>
+  <a href="/pokemon/<%= pokemon.id() %>"><%= pokemon.name %><% if pokemon.picture != 'null' %><img src="<%=pokemon.picture%>" alt="Photo" style="width:40px;height:40px;">
+    <% end %>
+  </a>
+</p>
 <hr/>
 <% end %>

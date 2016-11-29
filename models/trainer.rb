@@ -25,6 +25,12 @@ class Trainer
     return result
   end
 
+  def pokemon()
+    sql = "SELECT * FROM pokemon WHERE trainerid = #{id}"
+    pokemon = SqlRunner.run(sql)
+    result = pokemon.map{ |pokemon| Pokemon.new(pokemon)}
+  end
+
   def self.delete_all()
   sql = "DELETE FROM trainers;"
   SqlRunner.run(sql)

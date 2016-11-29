@@ -1,0 +1,5 @@
+<p>Name: <%= @trainer.name %></p>
+<p>Pokemon owned:</p>
+<% for pokemon in @trainer.pokemon %>
+<p><%= pokemon.name %></p>
+<% end %>

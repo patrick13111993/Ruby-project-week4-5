@@ -18,7 +18,8 @@
     <select name="pokeid">
 
      <% for pokemon in @pokemon %>
-      <option value="<%=pokemon.id%>"><%=pokemon.name%></option>
+    <% if pokemon.trainerid == 'null'%><option value="<%=pokemon.id%>"><%=pokemon.name%></option>
+    <% end %>
     <% end %>
     </select>
   </label>

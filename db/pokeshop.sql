@@ -12,5 +12,6 @@ CREATE TABLE pokemon (
   name VARCHAR(255),
   breed VARCHAR(255),
   date_arrived DATE,
-  trainerid INT8 references trainers(id)
+  trainerid INT8 references trainers(id),
+  picture TEXT
   );

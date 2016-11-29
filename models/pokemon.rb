@@ -3,7 +3,7 @@ require_relative('trainer')
 
 class Pokemon
 
-  attr_reader(:name, :breed, :date_arrived, :id)
+  attr_reader(:name, :breed, :date_arrived, :id, :picture)
   attr_accessor(:trainerid)
 
   def initialize(options)
@@ -12,12 +12,13 @@ class Pokemon
     @breed = options['breed']
     @date_arrived = options['date_arrived']
     @trainerid = options['trainerid'] || 'null'
+    @picture = options['picture'] || 'null'
   end
 
   def save()
     sql = "INSERT INTO pokemon (
-    name, breed, date_arrived, trainerid ) VALUES 
-    ('#{ @name }','#{ @breed }','#{ @date_arrived }', #{@trainerid}) 
+    name, breed, date_arrived, trainerid, picture ) VALUES 
+    ('#{ @name }','#{ @breed }','#{ @date_arrived }', #{@trainerid}, '#{@picture}') 
     RETURNING *"
     pokemon_data = SqlRunner.run(sql)
     @id = pokemon_data.first()['id'].to_i
@@ -39,6 +40,11 @@ class Pokemon
 
   def self.delete_all()
   sql = "DELETE FROM pokemon;"
+  SqlRunner.run(sql)
+  end  
+
+  def self.delete(id)
+  sql = "DELETE FROM pokemon WHERE id = #{id};"
   SqlRunner.run(sql)
   end
 
