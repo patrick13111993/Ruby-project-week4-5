@@ -20,9 +20,9 @@ nav ul {
 }
 
 nav ul li {
-  padding: 15px;
+  padding: 10px;
   display: inline-block;
-  background-color: red;
+  background-color:maroon;
 }
 
 nav a {
