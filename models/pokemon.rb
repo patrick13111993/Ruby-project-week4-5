@@ -3,8 +3,8 @@ require_relative('trainer')
 
 class Pokemon
 
-  attr_reader(:name, :breed, :date_arrived, :id, :picture)
-  attr_accessor(:trainerid)
+  attr_reader(:name, :breed, :date_arrived, :id)
+  attr_accessor(:trainerid, :picture)
 
   def initialize(options)
     @id = options['id'].to_i || 'null' 
@@ -60,6 +60,5 @@ class Pokemon
     sql = "UPDATE pokemon SET trainerid = #{params['trainerid']} WHERE id = #{params['pokeid']};"
       SqlRunner.run(sql)
   end
-
 
 end

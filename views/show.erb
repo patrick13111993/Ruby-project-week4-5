@@ -2,3 +2,5 @@
 <p>Date arrived: <%= @pokemon.date_arrived %> </p>
 <p>Breed: <%= @pokemon.breed %> </p>
 <p>Trainer: <%= @pokemon.trainer.name if @pokemon.trainerid != 'null' %><%= 'No one - up for adoption!' if @pokemon.trainerid == 'null' %> </p>
+<p><% if @pokemon.picture != 'null' %><img src="<%=@pokemon.picture%>" alt="Photo" style="width:300px;height:300px;">
+<% end %></p>
