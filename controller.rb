@@ -62,3 +62,7 @@ end
 get '/thankyou' do
   erb(:thankyou)
 end
+
+get '/hank' do
+  erb(:hank)
+end
