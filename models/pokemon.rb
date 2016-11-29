@@ -50,5 +50,10 @@ class Pokemon
     return result
   end
 
-  
+  def self.update(params)
+    sql = "UPDATE pokemon SET trainerid = #{params['trainerid']} WHERE id = #{params['pokeid']};"
+      SqlRunner.run(sql)
+  end
+
+
 end

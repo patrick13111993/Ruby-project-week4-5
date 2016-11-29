@@ -48,3 +48,12 @@ get '/adopt' do
   @pokemon = Pokemon.all()
   erb(:adopt)
 end
+
+post '/adopt' do
+  Pokemon.update(params)
+  redirect to ("/thankyou")
+end
+
+get '/thankyou' do
+  erb(:thankyou)
+end
