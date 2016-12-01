@@ -50,10 +50,10 @@ post '/trainer' do
 end
 
 get '/adopt' do
-    @trainers = Trainer.all()
-    @pokemon = Pokemon.all()
-    adopt = Pokemon.can_adopt?
-    if adopt
+  @trainers = Trainer.all()
+  @pokemon = Pokemon.all()
+  adopt = Pokemon.can_adopt?
+  if adopt
     erb(:adopt)
   else
     redirect to ("/sorry")
